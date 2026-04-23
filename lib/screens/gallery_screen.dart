@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import './detail_screen.dart';
 
 class GalleryScreen extends StatefulWidget {
   const GalleryScreen({super.key});
@@ -61,6 +62,12 @@ class _GalleryScreenState extends State<GalleryScreen> with SingleTickerProvider
 
           Center(
             child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DetailScreen()),
+                );
+              },
               child: const Hero(
                 tag: 'produto-123', 
                 child: CircleAvatar(
